@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import sys
+import argparse
+
+class CommandParser:
+  def common(self,parser):
+    parser.add_argument('dir', action='store', type=str, help='The directory Octo will train from.')
+    self.common_flags(parser)
+    
+  def common_flags(self, parser):
+    parse.add_argument('--batch_size','-b',type='int',default=2,help='Number of text samples in each batch.')
+    parser.add_argument('--format', '-f', type=str, default='txt', help='TXT or OCTO')
+    
+  def get_parser(self):
+    parser = argparse.ArgumentParser(description='Train, run, and deploy your ADVs', add_help=True)
+    subparsers = parser.add_subparsers(dest='method')
+    train_parser = subparsers.add_parser('train')
+    build_parser = subparsers.add_parser('build')
+    new_parser = subparsers.add_parser('new')
+    self.common_flags(parser)
+    self.common(build_parser)
+    self.common(new_parser)
+    
+    return parser
+    
+parser = CommandParser().get_parser()
+args = CommandParser().get_parser().parse_args()
+
+class GetArgs:                                        # GetArgs('-b') will return 2 if command was octo-adv 2
+  def __init__(n):
+    if n == '-b':
+      return args.batch_size
+    elif n == '-f':
+      return args.format
+      
+  def Parser():
+    return parser
+    
