@@ -32,4 +32,6 @@ setup(
   ]
   
   keywords='generate art teach computer graphics random code python experimental',
-  )
+    
+  packages=GetPackages()
+)
