@@ -7,13 +7,13 @@ with open(path.join(octo, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-  name='octo-adv',
+  name='octoadv',
   version='1.0',
   
   description='An experimental image replicator based off hyperGAN.',
   long_description=long_description,
   
-  url='https://github.com/source-live/octo-adv',
+  url='https://github.com/source-live/octoADV',
   
   author='Source Live',
   author_email='zack@zacklearns.com',
@@ -33,6 +33,6 @@ setup(
   
   keywords='generate art teach computer graphics random code python experimental',
     
-  packages=['octo-adv']+subpackages,
-  scripts = ['bin/octo-adv']
+  packages=['octoadv']+subpackages,
+  scripts = ['bin/octoadv']
 )
