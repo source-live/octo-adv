@@ -33,5 +33,6 @@ setup(
   
   keywords='generate art teach computer graphics random code python experimental',
     
-  packages=GetPackages()
+  packages=['octo-adv']+subpackages,
+  scripts = ['bin/octo-adv']
 )
