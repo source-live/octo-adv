@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 import sys
 import argparse
+import octoadv as oa
 
-class CommandParser:
+class CommandParser:                                               # EX: octoadv -f 
   def common(self,parser):
-    parser.add_argument('dir', action='store', type=str, help='The directory Octo will train from.')
+    parser.add_argument('dir',action='store',type=str,help='The directory Octo will train from.')
     self.common_flags(parser)
     
   def common_flags(self, parser):
-    parse.add_argument('--batch_size','-b',type='int',default=2,help='Number of text samples in each batch.')
-    parser.add_argument('--format', '-f', type=str, default='txt', help='TXT or OCTO')
+    parser.add_argument('--format','-f',type=str,default='txt',help='TXT or OCTO')
+    parser.add_argument('--add_symbols','-as',type=boolean,default='True',help='Define whether or not to add symbols from examples.',add_help=True)
     
   def get_parser(self):
     parser = argparse.ArgumentParser(description='Train, run, and deploy your ADVs', add_help=True)
@@ -26,12 +27,12 @@ class CommandParser:
 parser = CommandParser().get_parser()
 args = CommandParser().get_parser().parse_args()
 
-class GetArgs:                                        # GetArgs('-b') will return 2 if command was octo-adv 2
+class GetArgs:                                        # GetArgs('-as') will return True if command was octoadv -as True
   def __init__(n):
-    if n == '-b':
-      return args.batch_size
-    elif n == '-f':
+    if n == '-f':
       return args.format
+    elif n == '-as':
+      return args.add_symbols
       
   def Parser():
     return parser
