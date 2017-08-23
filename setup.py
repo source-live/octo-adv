@@ -34,5 +34,6 @@ setup(
   keywords='generate art teach computer graphics random code python experimental',
     
   packages=['octoadv']+subpackages,
-  scripts = ['bin/octoadv']
+  scripts=['bin/octoadv']
+  install_requires=['os','difflib','sys','argparse']
 )
