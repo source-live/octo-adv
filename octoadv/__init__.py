@@ -1,5 +1,4 @@
 from os import walk
-import random
 from difflib import SequenceMatcher
 
 samples = []
@@ -140,8 +139,12 @@ class octo-adv:
             
          wl.append(word)
          
-       while len(string) =< amount:
-          for word in wl:
-            if len(string) =< amount:
-              string.append()
+         while len(string) < amount+1:
+            for word in wl:
+              if len(string) =< amount:
+               string.append(word)
               
+            if len(string) == amount:
+              str_ = pref + " ".join(string) + suff
+              print(SequenceMatcher(None, f, str_).ratio() * 10)
+              return pref + " ".join(string) + suff
